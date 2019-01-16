@@ -1,0 +1,83 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = "!has('nvim')"
+hook_add = '''
+let g:acp_enableAtStartup = 0
+let g:neocomplete#lock_iminsert = 1
+let g:neocomplete#enable_at_startup = 1 
+let g:neocomplete#enable_ignore_case = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#enable_complete_select = 0
+let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+'''
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+#[[plugins]]
+#repo = 'jmcantrell/vim-virtualenv'
+#on_ft = ['python']
+
+[[plugins]]
+repo = 'davidhalter/Jedi-vim'
+if = "!has('nvim')"
+ok_source = '''
+et g:jedi#completions_enabled = 0
+  let g:jedi#completions_command = "<C-N>"       "Ctrl + N で候補を表示
+  let g:jedi#popup_on_dot = 0
+'''
+on_ft = ['python']
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+if = "has('nvim')"
+on_ft = ['python']
+on_i = 1
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+hook_add = '''
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" for Python
+let g:syntastic_python_checkers = [ 'flake8', 'mypy']
+let g:syntastic_rust_checkers = ['rustc', 'cargo']
+'''
+on_ft = ['python']
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']

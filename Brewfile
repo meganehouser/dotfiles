@@ -1,0 +1,20 @@
+brew "tree"
+brew "wget"
+brew "zsh"
+brew "tmux"
+brew "neovim"
+brew "cask"
+brew "mono"
+brew "mas"
+brew "go"
+brew "python"
+cask "google-chrome"
+cask "iterm2"
+cask "docker"
+cask "dropbox"
+cask "kindle"
+cask "visual-studio-code"
+cask "karabiner-elements"
+mas "Line", id: 539883307
+mas "Kindle", id: 405399194
+mas "Slack", id: 803453959

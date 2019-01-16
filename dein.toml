@@ -1,0 +1,50 @@
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+#repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+if = "!has('nvim')"
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = "has('nvim')"
+on_i = 1
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1        "起動時に開始
+  let g:deoplete#auto_complete_delay = 0      "入力からポップアップ表示までのdealy[ms]
+  let g:deoplete#enable_smart_case = 1        "大文字小文字を区別
+  let g:deoplete#file#enable_buffer_path = 1  "バッファから読み込む?
+'''
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = "has('nvim')"
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = "has('nvim')"
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'simeji/winresizer' # easy resizing of vim windows (ctrl + E)
+
+[[plugins]]
+repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
