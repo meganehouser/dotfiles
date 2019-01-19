@@ -19,5 +19,12 @@ rm -rf fonts
 mkdir ~/.config/
 mkdir ~/.config/nvim/
 
+# golang
+mkdir ~/projects/
+mkdir ~/projects/go/
+mkdir ~/projects/go/bin
+mkdir ~/projects/go/src
+mkdir ~/projects/go/pkg
+
 # symlink
 sh symlink.sh
