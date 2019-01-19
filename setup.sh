@@ -16,6 +16,8 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
+mkdir ~/.config/
+mkdir ~/.config/nvim/
 
 # symlink
 sh symlink.sh

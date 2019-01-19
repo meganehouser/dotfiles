@@ -6,7 +6,7 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export GOPATH=~/Documents/go
+export GOPATH=~/projects/go
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0.51.jdk/Contents/Home
 export PATH="$PATH":"$JAVA_HOME":$GOPATH/bin:~/bin/:~/bin/play:~/.local/bin
 export PATH=$HOME/.cargo/bin:$HOME/.nodebrew/current/bin:$PATH
