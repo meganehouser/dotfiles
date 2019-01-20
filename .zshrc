@@ -5,22 +5,17 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export GOPATH=~/projects/go
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0.51.jdk/Contents/Home
-export PATH="$PATH":"$JAVA_HOME":$GOPATH/bin:~/bin/:~/bin/play:~/.local/bin
-export PATH=$HOME/.cargo/bin:$HOME/.nodebrew/current/bin:$PATH
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.nodebrew/current/bin"
+export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:/usr/local/Cellar/mono/5.18.0.225/bin/"
+export GOPATH="$HOME/projects/go"
 export EDITOR=/usr/local/bin/nvim
-export blog_editor=/Applications/MacVim.app/Contents/MacOS/MacVim
-export blog_dir=~/Documents/blog/content/
 export PIPENV_VENV_IN_PROJECT=true
-export XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
+export MONO_GAC_PREFIX="/usr/local"
 
 
 # 色を使用出来るようにする
