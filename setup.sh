@@ -6,6 +6,9 @@ brew update
 brew upgrade
 brew bundle
 
+# git
+mkdir ~/.config/git/
+
 # neovim
 mkdir ~/.vim/
 mkdir ~/.vim/rc/
