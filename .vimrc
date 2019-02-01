@@ -8,6 +8,9 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set mouse=a
 
+" clip board "
+set clipboard+=unnamedplus
+
 if &compatible
   set nocompatible
 endif
