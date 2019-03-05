@@ -10,13 +10,16 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:/usr/local/Cellar/mono/5.18.0.225/bin/"
+export PATH="$PATH:$HOME/.ndenv/bin"
 export GOPATH="$HOME/projects/go"
 export EDITOR=/usr/local/bin/nvim
 export PIPENV_VENV_IN_PROJECT=true
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
 export MONO_GAC_PREFIX="/usr/local"
+export DJANGO_READ_DOT_ENV_FILE=True
 
+eval "$(ndenv init -)"
 
 # 色を使用出来るようにする
 autoload -Uz colors

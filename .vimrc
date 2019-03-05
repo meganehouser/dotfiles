@@ -67,7 +67,7 @@ if dein#check_install()
 endif
 
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:python_host_prog = '/usr/local/bin/python'
+"let g:python_host_prog = '/usr/bin/python'
 if exists("$VIRTUAL_ENV")
   let g:python3_host_prog = substitute(system("which python"), '\n', '', 'g')
 endif
