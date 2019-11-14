@@ -3,14 +3,17 @@
 # http://mollifier.mit-license.org/
 
 ########################################
+source ~/.apps/zsh-notify/notify.plugin.zsh
 # 環境変数
 export LANG=ja_JP.UTF-8
 export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.nodebrew/current/bin"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:/usr/local/Cellar/mono/5.18.0.225/bin/"
-export PATH="$PATH:$HOME/.ndenv/bin"
+export PATH="$HOME/.ndenv/shims:$PATH"
+export PATH="$PATH:$HOME/projects/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Python/3.6/bin"
 export GOPATH="$HOME/projects/go"
 export EDITOR=/usr/local/bin/nvim
 export PIPENV_VENV_IN_PROJECT=true
@@ -18,6 +21,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
 export MONO_GAC_PREFIX="/usr/local"
 export DJANGO_READ_DOT_ENV_FILE=True
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 
 eval "$(ndenv init -)"
 
@@ -134,7 +139,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 # エイリアス
 
 alias la='ls -a'
-alias ll='ls -l'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -163,20 +167,20 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 
+alias kdiff3='/Applications/kdiff3.app/Contents/MacOS/kdiff3'
+alias stree='open /Applications/SourceTree.app'
+alias fork='open /Applications/Fork.app'
+alias actv='source .venv/bin/activate'
+alias workon='source .venv/bin/activate'
+alias mkvenv='python3 -m venv .venv --prompt $(basename `pwd`)'
+alias fcd='cd $(fd | fzf)'
+alias ftpt='footprint -P | pbcopy'
+alias ls='exa'
+alias ll='exa -ahl --git'
+alias plantuml-server='docker run -d -p 8081:8080 plantuml/plantuml-server:jetty'
+alias bc='eva'
 
 ########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
-esac
 
 # vim:set ft=zsh:
 # Override auto-title when static titles are desired ($ title My new title)
@@ -201,3 +205,37 @@ preexec() {
    printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
 }
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+function fd-fzf() {
+  local target_dir=$(fd -t d -I -H -E ".git"| fzf-tmux --reverse --query="$LBUFFER")
+  local current_dir=$(pwd)
+ 
+  if [ -n "$target_dir" ]; then
+    BUFFER="cd ${current_dir}/${target_dir}"
+    zle accept-line
+  fi
+ 
+  zle reset-prompt
+}
+#zle -N fd-fzf
+
+# Wasmer
+export WASMER_DIR="/Users/satoshiterajima/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+function jkj(){
+    local selected=$(jump-kun)
+    if [[ -n $selected ]]; then
+        \cd $selected
+    fi
+}
+
+function gq() {
+  local selected_dir=$(ghq list -p | fzf --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    print -z "cd ${selected_dir}"
+  fi
+}

@@ -7,6 +7,9 @@ repo = 'Shougo/dein.vim'
 if = "!has('nvim')"
 
 [[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
 on_i = 1

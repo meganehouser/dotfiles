@@ -19,6 +19,12 @@ repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+if = 'has("nvim")'
+hook_source = 'source ~/.config/nvim/userautoload/plugins/plugins-denite.vim'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 

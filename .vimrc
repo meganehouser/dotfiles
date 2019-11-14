@@ -82,8 +82,8 @@ augroup python
   autocmd!
   "autocmd FileType python setl autoindent
   "autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-  autocmd FileType python setlocal omnifunc=jedi#completions
   autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType python setlocal omnifunc=jedi#completions
 augroup END
 
 augroup html
@@ -188,7 +188,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#ale#error_symbol = 'E:'
 let g:airline#extensions#ale#warning_symbol = 'W:'
 
+tnoremap <C-j> <C-\><C-n>
 
+call map(dein#check_clean(), "delete(v:val, 'rf')")
 colorscheme tender
 
 syntax on
